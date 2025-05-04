@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from './1.png'; // Logo file named 1.png in the same folder
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +35,11 @@ const Header = () => {
         <Link to="/" className="flex items-center">
           <span className="text-xl md:text-2xl font-serif font-bold text-amber-500">Glaslum</span>
           <span className="text-xl md:text-2xl font-serif font-light text-stone-50">Industries</span>
+          <img 
+            src={logo} 
+            alt="Glaslum Industries Logo" 
+            className="h-14 ml-2 inline-block" 
+          />
         </Link>
         
         <nav className="hidden lg:flex items-center space-x-8">
@@ -47,10 +53,13 @@ const Header = () => {
             Projects
           </Link>
           <Link to="/services" className={`nav-link ${isActive('/services') ? 'nav-link-active' : ''}`}>
-            Contact Us
+            Services
           </Link>
           <Link to="/about" className={`nav-link ${isActive('/about') ? 'nav-link-active' : ''}`}>
             About
+          </Link>
+          <Link to="/contact" className={`nav-link ${isActive('/about') ? 'nav-link-active' : ''}`}>
+            Contact us
           </Link>
         </nav>
         
